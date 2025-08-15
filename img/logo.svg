@@ -1,0 +1,16 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowries logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F7C7E3"/>
+      <stop offset="100%" stop-color="#F4E04D"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="32" fill="url(#g)"/>
+  <g transform="translate(128 128)">
+    <g fill="none" stroke="#2D2A32" stroke-width="4">
+      <circle r="52" fill="#fff" opacity=".9"/>
+      <path d="M0-60 C20-60, 38-42, 38-22 C38-10, 30-2, 0 30 C-30-2,-38-10,-38-22 C-38-42,-20-60,0-60 Z" fill="#F7C7E3" stroke="none"/>
+      <circle r="8" fill="#2D2A32" stroke="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Flowries.store — flower boutique yang ceria & elegan. Bouquets, hampers, dan rangkaian bunga artisan."/>
+  <title>flowries.store — Flower Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Flowries Home">
+        <img src="img/logo.svg" alt="Flowries.store logo" class="logo" />
+        <span class="brand-name">flowries.<strong>store</strong></span>
+      </a>
+
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#bestseller">Best Sellers</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak">Kontak</a>
+        <button class="btn cart-btn" id="openCartBtn" aria-label="Buka keranjang belanja">
+          Keranjang <span id="cartCount" class="badge">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Bunga yang <span class="highlight">mewarnai</span> harimu</h1>
+        <p>Rangkaian bunga segar dengan nuansa <em>pink soft</em> &amp; <em>fresh freesia</em> — sempurna untuk hadiah, dekor, dan momen spesial.</p>
+        <a href="#bestseller" class="btn btn-primary">Jelajahi Best Sellers</a>
+      </div>
+      <div class="hero-art">
+        <img src="img/product1.svg" alt="Ilustrasi buket bunga" loading="eager" />
+      </div>
+    </div>
+    <div class="floating-petals" aria-hidden="true"></div>
+  </section>
+
+  <main>
+    <!-- BEST SELLER SLIDER -->
+    <section id="bestseller" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Produk Terlaris</h2>
+          <p>Maksimal 5 item favorit pelanggan.</p>
+        </div>
+
+        <div class="slider" role="region" aria-label="Slider produk terlaris">
+          <button class="slider-nav prev" aria-label="Sebelumnya" id="prevSlide">&#10094;</button>
+          <div class="slides" id="slidesContainer">
+            <!-- slides injected by JS -->
+          </div>
+          <button class="slider-nav next" aria-label="Berikutnya" id="nextSlide">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section id="testimoni" class="section alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Ceritakan pengalamanmu bersama flowries.store</p>
+        </div>
+        <form id="testiForm" class="card form-card" aria-label="Form testimoni">
+          <div class="form-grid">
+            <label>
+              <span>Nama</span>
+              <input type="text" name="nama" placeholder="Nama kamu" required>
+            </label>
+            <label>
+              <span>Rating</span>
+              <select name="rating" required>
+                <option value="5">5 - Sempurna</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1 - Kurang</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>Pesan</span>
+            <textarea name="pesan" rows="3" placeholder="Tulis pengalamanmu..." required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Kirim Testimoni</button>
+        </form>
+
+        <div id="testiList" class="testi-list">
+          <!-- testimonials rendered here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK / KRITIK & SARAN -->
+    <section id="kontak" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Kritik &amp; Saran</h2>
+          <p>Kami senang mendengar masukannya!</p>
+        </div>
+
+        <form id="feedbackForm" class="card form-card" aria-label="Form kritik dan saran">
+          <div class="form-grid">
+            <label>
+              <span>Nama</span>
+              <input type="text" name="nama" placeholder="Nama kamu" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="email@contoh.com" required>
+            </label>
+          </div>
+          <label>
+            <span>Pesan</span>
+            <textarea name="pesan" rows="4" placeholder="Tulis kritik atau saran..." required></textarea>
+          </label>
+          <button class="btn" type="submit">Kirim</button>
+          <p id="feedbackStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="address card">
+          <h3>Alamat Toko</h3>
+          <p>Svartbäcksgatan, Uppsala — Swedia</p>
+          <p class="small">Buka Setiap Hari 09.00 – 20.00</p>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Svartb%C3%A4cksgatan%2C%20Uppsala" target="_blank" rel="noopener">Lihat di Maps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true" aria-label="Keranjang belanja">
+    <div class="cart-header">
+      <h3>Keranjang</h3>
+      <button id="closeCartBtn" class="icon-btn" aria-label="Tutup keranjang">&times;</button>
+    </div>
+    <div id="cartItems" class="cart-items"><!-- items --></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotal">Rp0</span></div>
+      <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> flowries.store — Crafted with love.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
